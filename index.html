@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coco Studio</title>
+  <link rel="stylesheet" type="text/css" href="https://lf32.github.io/cdn/bulma/bulma.min.0.9.4.css">
+  <style type="text/css">
+    body {
+      height: 100vh;
+    }
+
+    .note-section {
+      border: 1px solid #555;
+    }
+
+    input[type="range"] {
+      width: 300px;
+      height: 10px;
+      background: #d3d3d3;
+
+    }
+
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 15px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 30px;
+  height: 20px;
+  background: #000;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px 0px #444;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body class="has-background-light is-full-width">
+  <header class="header p-5">
+    <h1 class="title">Coco Studio</h1>
+    <button id="play">Play</button>
+  </header>
+  <section class="player container is-hidden">
+    <div class="columns">
+      <div class="column mt-5 p-0">
+        <div id="cd" class="note-section m-5 p-2 master ">
+          <p>MASTER</p>
+          <table class="table is-fullwidth has-background-light">
+            <tr>
+              <td>VOL</td>
+              <td>
+                <input id="vol" type="range" min="0" max="100" value="100">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="cd" class="note-section m-5 p-2 voicing">
+          <p>VOICING</p>
+          <table class="table is-fullwidth has-background-light">
+            <tr>
+              <td>WAV</td>
+              <td>
+                <div>
+                  <input id="wav" type="range" min="0" max="1" step="0.01" value="0.5"/>
+                </div>
+                <table class="table is-fullwidth has-background-light">
+                  <tr class="is-flex is-justify-content-space-around">
+                    <td class="is-text-align-center">SIN</td>
+                    <td class="is-text-align-center">.</td>
+                    <td class="is-text-align-center">SQU</td>
+                    <td class="is-text-align-center">.</td>
+                    <td class="is-text-align-center">TRI</td>
+                    <td class="is-text-align-center">.</td>
+                    <td class="is-text-align-center">SAW</td>
+                  </tr>
+                </table>
+              </td>
+            </tr> 
+            <tr>
+              <td>WID</td>
+              <td>
+                <input type="range" name="mast">
+              </td>
+            </tr>  
+          </table>
+        </div>
+      </div>
+
+      <div class="column m-0 p-0">
+        <div id="cd" class="note-section m-5 p-2 range ">
+          <p>ADSR</p>
+          <table class="table is-fullwidth has-background-light">
+            <tr>
+              <td>TGT</td>
+              <td>
+                <div>
+                  <input type="range" name="mast">
+                </div>
+                <table class="table is-fullwidth has-background-light">
+                  <tr class="is-flex is-justify-content-space-around">
+                    <td class="is-text-align-center">ADSR</td>
+                    <td class="is-text-align-center">.</td>
+                    <td class="is-text-align-center">FILTER</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>  
+            <tr>
+              <td>ATK</td>
+              <td>
+                <input type="range" name="mast">
+              </td>
+            </tr> 
+            <tr>
+              <td>DEC</td>
+              <td>
+                <input type="range" name="mast">
+              </td>
+            </tr>  
+            <tr>
+              <td>SUS</td>
+              <td>
+                <input type="range" name="mast">
+              </td>
+            </tr>  
+            <tr>
+              <td>REL</td>
+              <td>
+                <input type="range" name="mast">
+              </td>
+            </tr>   
+          </table>
+        </div>
+      </div>
+
+      <div class="column mt-5 p-0">
+        <div id="cd" class="note-section m-5 p-2 filter ">
+          <p>FILTER</p>
+          <table class="table is-fullwidth has-background-light">
+            <tr>
+              <td>FRQ</td>
+              <td>
+                <input type="range" name="mast">
+              </td>
+            </tr>  
+            <tr>
+              <td>Q</td>
+              <td>
+                <input type="range" name="mast">
+              </td>
+            </tr> 
+          </table>
+        </div>
+        <div id="cd" class="note-section m-5 p-2 echofx">
+          <p>ECHO FX</p>
+          <table class="table is-fullwidth has-background-light">
+            <tr>
+              <td>TIM</td>
+              <td>
+                <input type="range" name="mast">
+              </td>
+            </tr>  
+            <tr>
+              <td>FBK</td>
+              <td>
+                <input type="range" name="mast">
+              </td>
+            </tr>  
+          </table>
+        </div>
+      </div>
+
+    </div>
+    <div class="keyboard">
+      <button class="button " data-note="c-4">C-4</button>
+      <button class="button " data-note="c#4">C#4</button>
+    </div>
+    <br>
+  </section>
+    <script src="./app.js"></script>
+</body>
+</html>
